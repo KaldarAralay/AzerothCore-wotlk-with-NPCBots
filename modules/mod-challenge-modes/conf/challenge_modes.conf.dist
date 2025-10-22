@@ -1,0 +1,156 @@
+#
+# Copyright (C) 2016+ AzerothCore <www.azerothcore.org>, released under GNU AGPL v3 license: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-AGPL3
+#
+
+[worldserver]
+
+########################################
+# Challenge Mods Config
+########################################
+#    ChallengeModes.Enable
+#        Description: Enable challenge modes.
+#            If set to 0, all challenges will be disabled, and the challenge mode selection object will not be present in starting areas.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+ChallengeModes.Enable = 1
+
+#    ChallengeModes.ModifyXP
+#        Description: Enable challenge mode XP functions.
+#            If set to 0, all challenge XP editing will be disabled. Disable to allow for compatability with other XP mods.
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+ChallengeModes.ModifyXP = 1
+
+########################################
+# Available Challenge Modes:
+########################################
+# 1. Hardcore            - Players who die are permanently ghosts and cannot be revived.
+# 2. SemiHardcore        - Players who die lose all worn equipment and carried gold.
+# 3. SelfCrafted         - Players can only wear equipment they have crafted.
+# 4. ItemQualityLevel    - Players can only wear equipment of Normal or Poor quality.
+# 5. LowXpGain          - Players receive 0.5x the normal amount of XP.
+# 6. VeryLowXpGain      - Players receive 0.25x the normal amount of XP.
+# 7. QuestXpOnly         - Players can only receive XP from quests.
+# 8. IronManMode         - Enforces the Iron Man ruleset.
+
+########################################
+# Challenge Mode Configuration        #
+########################################
+# Each challenge mode can have the following settings:
+# - Enable: Whether the challenge is available (1 = enabled, 0 = disabled).
+# - TitleRewards: Titles awarded at specific levels (Level TitleID format).
+# - XPMultiplier: Multiplies XP the player gains.
+# - TalentRewards: Rewards talent points at specific levels.
+# - ItemRewards: Rewards items at specific levels.
+# - DisableLevel: Level at which the challenge is disabled (0 means no disable).
+# - ItemRewardAmount: The amount of each item rewarded.
+# - AchievementReward: Achievement(s) rewarded at specific levels.
+#   - IRONMAN / ItemQuality
+#   Special options for specific challenges.
+#   ItemQualityLevel.MaxQuality = 1
+#       Sets the maximum item quality allowed to be worn for this challenge
+#       0 = Gray only
+#       1 = White and gray only (default)
+#       2 = Green, white, and gray only
+#       3 = Blue, green, white, and gray only
+
+########################################
+# Hardcore Mode Configuration          #
+########################################
+Hardcore.Enable = 1
+Hardcore.TitleRewards = ""
+Hardcore.XPMultiplier = 1
+Hardcore.TalentRewards = ""
+Hardcore.ItemRewards = "80 33225"
+Hardcore.ItemRewardAmount = 1
+Hardcore.DisableLevel = 0
+Hardcore.AchievementReward = ""
+
+########################################
+# Semi-Hardcore Mode Configuration     #
+########################################
+SemiHardcore.Enable = 1
+SemiHardcore.TitleRewards = ""
+SemiHardcore.XPMultiplier = 1
+SemiHardcore.TalentRewards = ""
+SemiHardcore.ItemRewards = "80 33224"
+SemiHardcore.ItemRewardAmount = 1
+SemiHardcore.DisableLevel = 0
+SemiHardcore.AchievementReward = ""
+
+########################################
+# Self-Crafted Mode Configuration      #
+########################################
+SelfCrafted.Enable = 1
+SelfCrafted.TitleRewards = ""
+SelfCrafted.XPMultiplier = 1
+SelfCrafted.TalentRewards = ""
+SelfCrafted.ItemRewards = "80 49343"
+SelfCrafted.ItemRewardAmount = 1
+SelfCrafted.DisableLevel = 80
+SelfCrafted.AchievementReward = ""
+
+########################################
+# Item Quality Level Mode Configuration#
+########################################
+ItemQualityLevel.Enable = 1
+ItemQualityLevel.TitleRewards = ""
+ItemQualityLevel.XPMultiplier = 1
+ItemQualityLevel.TalentRewards = ""
+ItemQualityLevel.ItemRewards = "80 43962"
+ItemQualityLevel.ItemRewardAmount = 1
+ItemQualityLevel.DisableLevel = 80
+ItemQualityLevel.AchievementReward = ""
+ItemQualityLevel.MaxQuality = 1
+
+########################################
+# Slow XP Gain Mode Configuration       #
+########################################
+LowXpGain.Enable = 1
+LowXpGain.TitleRewards = ""
+LowXpGain.TalentRewards = ""
+LowXpGain.ItemRewards = "80 43599"
+LowXpGain.ItemRewardAmount = 1
+LowXpGain.DisableLevel = 80
+LowXpGain.XPMultiplier = 0.50
+LowXpGain.AchievementReward = ""
+
+########################################
+# Very Slow XP Gain Mode Configuration #
+########################################
+VeryLowXpGain.Enable = 1
+VeryLowXpGain.TitleRewards = ""
+VeryLowXpGain.TalentRewards = ""
+VeryLowXpGain.ItemRewards = "80 46778"
+VeryLowXpGain.ItemRewardAmount = 1
+VeryLowXpGain.DisableLevel = 80
+VeryLowXpGain.XPMultiplier = 0.25
+VeryLowXpGain.AchievementReward = ""
+
+########################################
+# Quest XP Only Mode Configuration     #
+########################################
+QuestXpOnly.Enable = 1
+QuestXpOnly.TitleRewards = ""
+QuestXpOnly.XPMultiplier = 1
+QuestXpOnly.TalentRewards = ""
+QuestXpOnly.ItemRewards = "80 38576"
+QuestXpOnly.ItemRewardAmount = 1
+QuestXpOnly.DisableLevel = 80
+QuestXpOnly.AchievementReward = ""
+
+########################################
+# Iron Man Mode Configuration          #
+########################################
+IronMan.Enable = 1
+IronMan.TitleRewards = ""
+IronMan.TalentRewards = ""
+IronMan.ItemRewards = "80 21176"
+IronMan.ItemRewardAmount = 1
+IronMan.DisableLevel = 80
+IronMan.XPMultiplier = 1
+IronMan.AchievementReward = ""
